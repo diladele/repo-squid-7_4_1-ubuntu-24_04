@@ -1,0 +1,107 @@
+Package: squid
+Version: 7.4-1
+Architecture: amd64
+Maintainer: Luigi Gangitano <luigi@debian.org>
+Installed-Size: 8066
+Pre-Depends: init-system-helpers (>= 1.54~), adduser
+Depends: libc6 (>= 2.38), libcap2 (>= 1:2.10), libcom-err2 (>= 1.43.9), libcrypt1 (>= 1:4.1.0), libecap3 (>= 1.0.1), libgcc-s1 (>= 3.4), libgnutls30t64 (>= 3.8.1), libgssapi-krb5-2 (>= 1.17), libkrb5-3 (>= 1.10+dfsg~), libldap2 (>= 2.6.2), libltdl7 (>= 2.4.7), libnetfilter-conntrack3 (>= 1.0.1), libnettle8t64, libpam0g (>= 0.99.7.1), libsasl2-2 (>= 2.1.28+dfsg1), libstdc++6 (>= 13.1), libsystemd0, libtdb1 (>= 1.2.7+git20101214), netbase, logrotate (>= 3.5.4-1), squid-common (>= 7.4-1), libdbi-perl
+Recommends: libcap2-bin, ca-certificates
+Suggests: resolvconf (>= 0.40), smbclient, ufw, winbind, apparmor
+Homepage: http://www.squid-cache.org
+Priority: optional
+Section: web
+Filename: pool/main/s/squid/squid_7.4-1_amd64.deb
+Size: 2694490
+SHA256: 3564be46487f58aa9636f8c5f83ad2c0f0ac4f10829ac0565e520f7f905d9eb1
+SHA1: 6b2caab4ac99cbadcbfaf2cc9ec9910b43b6f0e8
+MD5sum: 96893357830195201491bd5d40aa40e4
+Description: Full featured Web Proxy cache (HTTP proxy GnuTLS flavour)
+ Squid is a high-performance proxy caching server for web clients, supporting
+ FTP, ICY and HTTP data objects.
+ .
+ This package provides Squid binaries supporting HTTPS features
+ without SSL-Bump (HTTPS interception).
+
+Package: squid-common
+Source: squid
+Version: 7.4-1
+Architecture: all
+Maintainer: Luigi Gangitano <luigi@debian.org>
+Installed-Size: 367
+Depends: squid-langpack (>= 20110214-1)
+Multi-Arch: foreign
+Homepage: http://www.squid-cache.org
+Priority: optional
+Section: web
+Filename: pool/main/s/squid/squid-common_7.4-1_all.deb
+Size: 206280
+SHA256: 36efa905921ef5f56a2ff19f1fa07efdfe5fc77e869d7d0f7511cec97524bdf3
+SHA1: 35b99a7d1d69ff40588fd8cf9683f0ec16452b51
+MD5sum: 4a08d83d237a2b0e762482a155359eb5
+Description: Full featured Web Proxy cache (HTTP proxy) - common files
+ Squid is a high-performance proxy caching server for web clients, supporting
+ FTP, ICY and HTTP data objects.
+ .
+ This package contains common files (MIB and icons)
+
+Package: squid-dbgsym
+Package-Type: ddeb
+Source: squid
+Version: 7.4-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Luigi Gangitano <luigi@debian.org>
+Installed-Size: 24522
+Depends: squid (= 7.4-1)
+Priority: optional
+Section: web
+Filename: pool/main/s/squid/squid-dbgsym_7.4-1_amd64.deb
+Size: 22512488
+SHA256: 58ae77bfa3048df6f4f7fe42f21f7f154a6bc3955a80b6c05e4ab3138b418b99
+SHA1: f31555802b6b34e0c0f791a6c54c55dc10560397
+MD5sum: 60c854271445aee688039a4cd9c25e4a
+Description: debug symbols for squid
+Build-Ids: 12de650c22f9fc0a58b7ab091823fa83786965b4 1c2e16ab6fb9c1b794f4720c1f52a99f9d676cc3 249a39449718fd2a2005268cfc3e503bb1c415bd 2ccb85d9b62181a47d65941d3566c573af8b7944 3ea78f3cb9ae4a0b7432441b0e66739b0001490e 4f7c7434f4c587f6f2d5ba9ad63d26fdc435b012 52e4dcc2e58555d481ebb6d35651544c8915f461 54ddd6693fa5a55b32d8c33fece00ed11d86aaad 617ad57b55b36306b73e01fbda2c305fdb3d794b 64de516f1b1eff25086434335d39f035408cd352 67161808edbd0d87ca966d40a89805560a519cda 71691ea568e23dbafa22e3bf4fafa55fc01eaf7c 873899a95f0b5a3b4c7ab76034722beb53500b45 89249b19536400d73fdec4c533d18e46083f24a7 8fd9785f90ef9ac394c0a279099d7e08a9201d6f 9c1d039f2978661b6ce3c2fa5465d08f50d9ddb8 a0ef76a11a51436c2d1ca2db4954bb1d6c133460 b489752186b29c49d403f5597205dcb55d7d2c4d c629d5f7551bbcb064c20aea4905a047a3e80dfd d4b26b0b326195cb7955572002ff804c00ccd970 e4bc7834c046dc1e9898babfbebb1f8dc5619bcc e9f2b0a248d7a636241de73c796ce06545526534 ef3174bda4562876193d6a6d5ca6de95193bcb60 f50814f7c108920382dba2dd487e96f3d334ed2e faae9cc75971aeff86ec56213e5cc5b63c35f053 fb481a1241bfb11cbd5bc5d02477b9bc1df6c42a
+
+Package: squid-openssl
+Source: squid
+Version: 7.4-1
+Architecture: amd64
+Maintainer: Luigi Gangitano <luigi@debian.org>
+Installed-Size: 7476
+Pre-Depends: squid (>= 7.4-1)
+Depends: libc6 (>= 2.38), libcap2 (>= 1:2.10), libcom-err2 (>= 1.43.9), libecap3 (>= 1.0.1), libgcc-s1 (>= 3.4), libgssapi-krb5-2 (>= 1.17), libkrb5-3 (>= 1.6.dfsg.2), libltdl7 (>= 2.4.7), libnetfilter-conntrack3 (>= 1.0.1), libnettle8t64, libssl3t64 (>= 3.0.0), libstdc++6 (>= 13.1), libsystemd0, netbase, ca-certificates
+Homepage: http://www.squid-cache.org
+Priority: optional
+Section: web
+Filename: pool/main/s/squid/squid-openssl_7.4-1_amd64.deb
+Size: 2605636
+SHA256: f000b1cde01863616a498c07fb8977616bedf4962648634c6d3ffdcb52aa89ab
+SHA1: 9b998d0ffd7e3ee861877d0b2bdeb2a3bc757794
+MD5sum: 05f6bd15339d8e13f9e330ef87b73e17
+Description: Full featured Web Proxy cache (HTTP proxy OpenSSL flavour)
+ Squid is a high-performance proxy caching server for web clients, supporting
+ FTP, ICY and HTTP data objects.
+ .
+ This package provides Squid binaries supporting full SSL-Bump features for
+ with SSL-Bump (HTTPS interception) using OpenSSL.
+
+Package: squid-openssl-dbgsym
+Package-Type: ddeb
+Source: squid
+Version: 7.4-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Luigi Gangitano <luigi@debian.org>
+Installed-Size: 26159
+Depends: squid-openssl (= 7.4-1)
+Priority: optional
+Section: web
+Filename: pool/main/s/squid/squid-openssl-dbgsym_7.4-1_amd64.deb
+Size: 24333812
+SHA256: 8d5fda95c43248d175e7184bbee8400825f3c36fb39c33c35fe9bb1478b7121f
+SHA1: 030c4d2657807177f6b4b8f8e0d8c468718f668e
+MD5sum: d1b8268ecef100602c7454a86518cfcf
+Description: debug symbols for squid-openssl
+Build-Ids: 0efc3716b92b1b953416e09b708bcc204d8aef36 8272bb7711af9370b9e3753259fda5d053fe15dc
+

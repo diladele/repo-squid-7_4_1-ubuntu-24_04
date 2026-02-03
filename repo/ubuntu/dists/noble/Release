@@ -1,0 +1,17 @@
+Codename: noble
+Date: Tue, 03 Feb 2026 06:24:05 UTC
+Architectures: amd64
+Components: main
+Description: Diladele B.V. Online Repository for Squid 7.4 for Ubuntu 24.04 LTS
+MD5Sum:
+ ed9a1ccd0e72a71c1d7f23209ef52adc 5450 main/binary-amd64/Packages
+ 77d5a7587933f2e5bdf7aa87b6243cf2 2287 main/binary-amd64/Packages.gz
+ ede6d18f32e0f1d2db7f0b39eb751fa6 116 main/binary-amd64/Release
+SHA1:
+ cd329fe9fd5725d6322a3ff9624556ae44956423 5450 main/binary-amd64/Packages
+ a11ec92d02d091efb32d71cace88a72ac1616868 2287 main/binary-amd64/Packages.gz
+ efe3d23961d6e235b0ae6ee0d8b60b7e0352d52c 116 main/binary-amd64/Release
+SHA256:
+ 014906cf9962bc7c591f844a65bc1a7702ac1e23d05d5842a3d7d19ca55b2603 5450 main/binary-amd64/Packages
+ 69edf0731597c8897c957a2ad443dd4fb7c80171d077f068035eb336c1cbf021 2287 main/binary-amd64/Packages.gz
+ eed0422949376ee212133ff7fa1e7c0f20c0333525466cf8e5f61cb6b75eb3a4 116 main/binary-amd64/Release
