@@ -11,21 +11,36 @@ Web Safety also has a user friendly Admin UI that you can use to manage your Squ
 
 ## How to Install
 
-If you are installing Squid 7.4 for the first time from this repository, run the following commands:
+If you are installing Squid 7.4 for the first time from this repository, run the following commands as `root` (or use the `install.sh` file in this repo).
 
 ```bash
-# add diladele apt key
-wget -qO - https://packages.diladele.com/diladele_pub.asc | sudo apt-key add -
+# get diladele apt key, dearmor it and add to trusted storage
+curl https://packages.diladele.com/diladele_pub.asc | gpg --dearmor >/etc/apt/trusted.gpg.d/diladele_pub.asc.gpg
 
 # add new repo
 echo "deb https://diladele.github.io/repo-squid-7_4_1-ubuntu-24_04/repo/ubuntu/ noble main" \
-    > /etc/apt/sources.list.d/squid-7_4_1.diladele.github.io.list
+   >/etc/apt/sources.list.d/squid-7_4_1.diladele.github.io.list
 
 # and install
 apt update && apt install -y \
-    squid-common \
-    squid-openssl \
-    libecap3 libecap3-dev
+   squid-common \
+   squid-openssl \
+   libecap3 libecap3-dev
+
+# create the override folder for squid
+mkdir -p /etc/systemd/system/squid.service.d/
+
+# and override the default number of file descriptors
+cat >/etc/systemd/system/squid.service.d/override.conf << EOL
+[Service]
+LimitNOFILE=65535
+EOL
+
+# switch to openssl based squid
+update-alternatives --set squid /usr/sbin/squid-openssl
+
+# finally reload the systemd
+systemctl daemon-reload
 ```
 
 If you have installed previous versions of Squid 7 from this repo then simply run `sudo apt update && sudo apt upgrade`. Also check that your current `squid.conf` file from previous version is not overwritten.
