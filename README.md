@@ -15,7 +15,7 @@ If you are installing Squid 7.4 for the first time from this repository, run the
 
 ```bash
 # get diladele apt key, dearmor it and add to trusted storage
-curl https://packages.diladele.com/diladele_pub.asc | gpg --dearmor >/etc/apt/trusted.gpg.d/diladele_pub.asc.gpg
+curl https://www.diladele.com/pkg/diladele_pub.asc | gpg --dearmor >/etc/apt/trusted.gpg.d/diladele_pub.asc.gpg
 
 # add new repo
 echo "deb https://diladele.github.io/repo-squid-7_4_1-ubuntu-24_04/repo/ubuntu/ noble main" \
